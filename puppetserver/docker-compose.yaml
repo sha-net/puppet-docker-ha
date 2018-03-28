@@ -1,0 +1,18 @@
+version: '2.2'
+services:
+  puppet:
+    build:
+     context: .
+     args:
+      # replace DOMAINNAME with your Domain
+      PUPPETSERVER_FQDN: PUPPETFQDNTOREPLACE
+    ports:
+     - "8140:8140"
+    scale: 1
+    volumes:
+     - /etc/puppetlabs/puppet/ssl:/etc/puppetlabs/puppet/ssl
+     # un comment if you would like to add enviroment
+     #- /etc/puppetlabs/code:/etc/puppetlabs/code
+    extra_hosts:
+      # replace IP with puppet DB public/internal IP
+      - "puppetdb:1.1.1.1"
