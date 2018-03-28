@@ -1,4 +1,4 @@
-# puppet-docker-ha
+# puppet on docker HA (very simple to use)
 There are two folders:<br>
 puppet server: can run in 1 or more instances (all of the instances need to have the same shared SSL folder<br>
 puppet db: need to be only one server<br>
